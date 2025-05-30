@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <script>
+        let fixN = Math.floor(Math.random() * 10) + 1;
+        let compareN = parseInt(prompt("Guess the number (1–10):"));
+
+        while (compareN !== fixN) {
+            if (isNaN(compareN)) {
+                compareN = parseInt(prompt("Please enter a valid number!"));
+            } else {
+                compareN = parseInt(prompt("Wrong guess, try again!"));
+            }
+        }
+
+        alert(`🎉 Congratulations! You guessed it right: ${fixN}`);
+    </script>
+</body>
+</html>

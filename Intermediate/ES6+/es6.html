@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Scores Analysis</title>
+</head>
+<body>
+    <script>
+        const students = [
+            { name: "Devika", score: 85 },
+            { name: "Ravi", score: 92 },
+            { name: "Neha", score: 58 },
+            { name: "Amit", score: 76 },
+            { name: "Sita", score: 33 }
+        ];
+
+        // Filter students who passed (score >= 40)
+        const passedStudents = students.filter(student => student.score >= 40);
+
+        // Map to get only the names of passed students
+        const passedNames = passedStudents.map(student => student.name);
+
+        // Calculate average score of all students
+        const totalScore = students.reduce((acc, student) => acc + student.score, 0);
+        const averageScore = totalScore / students.length;
+
+        // Output results
+        console.log("All students:", students);
+        console.log("Passed students:", passedStudents);
+        console.log("Names of passed students:", passedNames);
+        console.log(`Average score: ${averageScore.toFixed(2)}`);
+
+        alert(`Passed Students: ${passedNames.join(", ")}`);
+        alert(`Average Score of all students: ${averageScore.toFixed(2)}`);
+    </script>
+</body>
+</html>

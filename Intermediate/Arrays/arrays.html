@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task List Manager</title>
+</head>
+<body>
+  <script>
+    let numberOfTasks = parseInt(prompt("How many tasks do you want to enter?"));
+    let tasks = [];
+
+    for (let i = 1; i <= numberOfTasks; i++) {
+      tasks.push(prompt("Add Task " + i + ":"));
+    }
+
+    let choice;
+    while (choice !== 6) {
+      choice = parseInt(prompt(
+        "Choose an option:\n" +
+        "1. View all tasks\n" +
+        "2. Add a new task\n" +
+        "3. Remove last task\n" +
+        "4. Remove first task\n" +
+        "5. Search a task\n" +
+        "6. Exit"
+      ));
+
+      switch (choice) {
+        case 1:
+          if (tasks.length === 0) {
+            alert("No tasks available.");
+          } else {
+            let taskList = "";
+            for (let i = 0; i < tasks.length; i++) {
+              taskList += `${i + 1}. ${tasks[i]}\n`;
+            }
+            alert("Your Tasks:\n" + taskList);
+          }
+          break;
+
+        case 2:
+          let newTask = prompt("Enter new task:");
+          tasks.push(newTask);
+          alert("Task added!");
+          break;
+
+        case 3:
+          if (tasks.length > 0) {
+            tasks.pop();
+            alert("Last task removed!");
+          } else {
+            alert("No task to remove.");
+          }
+          break;
+
+        case 4:
+          if (tasks.length > 0) {
+            tasks.shift();
+            alert("First task removed!");
+          } else {
+            alert("No task to remove.");
+          }
+          break;
+
+        case 5:
+          let searchTask = prompt("Enter the task to search:");
+          if (tasks.includes(searchTask)) {
+            alert(`Yes, "${searchTask}" exists in the task list.`);
+          } else {
+            alert(`No, "${searchTask}" was not found.`);
+          }
+          break;
+
+        case 6:
+          alert("Goodbye!");
+          break;
+
+        default:
+          alert("Invalid option! Please enter a number between 1 and 6.");
+      }
+
+      console.log("Updated Task List:", tasks);
+    }
+  </script>
+</body>
+</html>

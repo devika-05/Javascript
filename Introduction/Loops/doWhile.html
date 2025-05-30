@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Attempt Simulator</title>
+</head>
+<body>
+    <script>
+        let correctPass = "devika123";
+        let checkPass;
+        let i = 3;
+
+        do {
+            checkPass = prompt("Enter the password:");
+
+            if (checkPass === correctPass) {
+                alert("✅ Login Successful!");
+                break;
+            } else {
+                i--;
+                if (i > 0) {
+                    alert(`❌ Incorrect password. You have ${i} attempt(s) left.`);
+                }
+            }
+        } while (i > 0);
+
+        if (i === 0) {
+            alert("🔒 Account locked. Too many failed attempts.");
+        }
+    </script>
+</body>
+</html>

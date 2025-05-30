@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Print Book Details</title>
+</head>
+<body>
+<script>
+    function printBookDetails(book) {
+        // Destructure properties from the book object
+        const { title, author, year, publisher: { name, location }, edition = "1st" } = book;
+
+        console.log(`Title: ${title}`);
+        console.log(`Author: ${author}`);
+        console.log(`Year: ${year}`);
+        console.log(`Publisher: ${name}`);
+        console.log(`Location: ${location}`);
+        console.log(`Edition: ${edition}`);
+    }
+
+    const book = {
+        title: "Clean Code",
+        author: "Robert C. Martin",
+        year: 2008,
+        publisher: {
+            name: "Prentice Hall",
+            location: "New Jersey"
+        }
+        // edition property is missing intentionally to use default value
+    };
+
+    printBookDetails(book);
+</script>
+</body>
+</html>

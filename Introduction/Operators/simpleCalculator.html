@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <script>
+       let firstN = parseFloat(prompt("Enter your first number :"));
+       let secondN = parseFloat(prompt("Enter your second number :"));
+       let oper= prompt("Enter operator (+, -, *, /, %):");
+        let result;
+
+        if (oper === "+") {
+            result = firstN + secondN;
+        } else if (oper === "-") {
+            result = firstN - secondN;
+        } else if (oper === "*") {
+            result = firstN * secondN;
+        } else if (oper === "/") {
+            result = secondN !== 0 ? firstN / secondN : "Cannot divide by 0";
+        } else if (oper === "%") {
+            result = firstN % secondN;
+        } else {
+            result = "Invalid operator";
+        }
+
+        console.log(`${firstN} ${oper} ${secondN} = ${result}`);
+        alert(`${firstN} ${oper} ${secondN} = ${result}`);  
+    </script>
+</body>
+</html>

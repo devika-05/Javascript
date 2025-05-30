@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM Access Practice</title>
+</head>
+<body>
+  <p id="mainTitle">Hello, DOM!</p>
+  <p class="desc">This is a paragraph.</p>
+  <p class="desc">Another one here.</p>
+
+  <script>
+    const title = document.getElementById("mainTitle");
+    const paragraphs = document.getElementsByClassName("desc");
+    const firstPara = document.querySelector(".desc");
+
+    console.log(title.innerText);        // "Hello, DOM!"
+    console.log(paragraphs.length);      // 2
+    console.log(firstPara.innerText); 
+    
+    console.log(document.getElementById("mainTitle").innerHTML="Hey Devu");
+    
+  </script>
+</body>
+</html>

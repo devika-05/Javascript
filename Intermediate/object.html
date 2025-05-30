@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Contact Book Manager</title>
+</head>
+<body>
+<script>
+    let contacts = {};
+    let choice;
+
+    while (choice !== 6) {
+        choice = parseInt(prompt(
+            "Choose an option:\n" +
+            "1. Add contact\n" +
+            "2. View all contacts\n" +
+            "3. Search contact\n" +
+            "4. Edit contact\n" +
+            "5. Delete contact\n" +
+            "6. Exit"
+        ));
+
+        switch (choice) {
+            case 1: // Add
+                let name = prompt("Enter contact name:");
+                let phone = prompt("Enter phone number:");
+                if (contacts[name]) {
+                    alert("Contact already exists!");
+                } else {
+                    contacts[name] = phone;
+                    alert("Contact added successfully!");
+                }
+                break;
+
+            case 2: // View All
+                let contactList = "All Contacts:\n";
+                for (let person in contacts) {
+                    contactList += `${person}: ${contacts[person]}\n`;
+                }
+                alert(contactList);
+                break;
+
+            case 3: // Search
+                let search = prompt("Enter contact name to search:");
+                if (contacts[search]) {
+                    alert(`${search}: ${contacts[search]}`);
+                } else {
+                    alert("Contact not found.");
+                }
+                break;
+
+            case 4: // Edit
+                let editName = prompt("Enter contact name to edit:");
+                if (contacts[editName]) {
+                    let newNumber = prompt(`Enter new phone number for ${editName}:`);
+                    contacts[editName] = newNumber;
+                    alert("Contact updated.");
+                } else {
+                    alert("Contact not found.");
+                }
+                break;
+
+            case 5: // Delete
+                let delName = prompt("Enter contact name to delete:");
+                if (contacts[delName]) {
+                    delete contacts[delName];
+                    alert("Contact deleted.");
+                } else {
+                    alert("Contact not found.");
+                }
+                break;
+
+            case 6: // Exit
+                alert("Goodbye!");
+                break;
+
+            default:
+                alert("Invalid choice. Please try again.");
+        }
+    }
+</script>
+</body>
+</html>

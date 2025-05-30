@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <script>
+        let billAmount=parseFloat(prompt("Enter the bill amount :"));
+        let tipPercent=parseFloat(prompt("Enter the tip percentage :"));
+
+        let totalAmount=(billAmount,tipPercent)=>{
+            return billAmount+(billAmount*tipPercent)/100;
+        }
+
+        alert(totalAmount(billAmount,tipPercent));
+        console.log(totalAmount(billAmount,tipPercent));
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Score Analyzer</title>
+</head>
+<body>
+  <script>
+    let numberOfStudents = parseInt(prompt("Enter the number of students:"));
+    let students = []; // was named 'marks' before — needs to be 'students'
+
+    for (let i = 0; i < numberOfStudents; i++) {
+      let name = prompt(`Enter name of student ${i + 1}:`);
+      let score = parseFloat(prompt(`Enter score of ${name} (0-100):`));
+      students.push({ name: name, score: score });
+    }
+
+    let choice;
+
+    do {
+      choice = parseInt(prompt(
+        "Choose an option:\n" +
+        "1. Show all students with scores\n" +
+        "2. Calculate and show the average score\n" +
+        "3. Show the highest scorer\n" +
+        "4. Show the lowest scorer\n" +
+        "5. Exit"
+      ));
+
+      switch (choice) {
+        case 1: {
+          let studentList = "";
+          for (let i = 0; i < students.length; i++) {
+            studentList += `${i + 1}. ${students[i].name} - ${students[i].score}\n`;
+          }
+          alert("Student List:\n" + studentList);
+          break;
+        }
+
+        case 2: {
+          let total = 0;
+          for (let student of students) {
+            total += student.score;
+          }
+          let average = total / students.length;
+          alert(`Average Score: ${average.toFixed(2)}`);
+          break;
+        }
+
+        case 3: {
+          let topStudent = students[0];
+          for (let student of students) {
+            if (student.score > topStudent.score) {
+              topStudent = student;
+            }
+          }
+          alert(`Highest Scorer: ${topStudent.name} (${topStudent.score})`);
+          break;
+        }
+
+        case 4: {
+          let lowestStudent = students[0];
+          for (let student of students) {
+            if (student.score < lowestStudent.score) {
+              lowestStudent = student;
+            }
+          }
+          alert(`Lowest Scorer: ${lowestStudent.name} (${lowestStudent.score})`);
+          break;
+        }
+
+        case 5: {
+          alert("Exiting the program.");
+          break;
+        }
+
+        default:
+          alert("Invalid choice. Please select a valid option.");
+      }
+    } while (choice !== 5);
+  </script>
+</body>
+</html>

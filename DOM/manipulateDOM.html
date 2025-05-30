@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Style Toggle Example</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="myParagraph">This is a paragraph to style.</p>
+  <button id="styleButton">Change Style</button>
+  <button id="toggleClassButton">Toggle Highlight Class</button>
+
+  <script>
+    const p = document.getElementById('myParagraph');
+    const styleButton = document.getElementById('styleButton');
+    const toggleClassButton = document.getElementById('toggleClassButton');
+
+    styleButton.addEventListener('click', () => {
+      p.style.color = 'blue';
+      p.style.fontSize = '24px';
+      p.style.backgroundColor = 'lightgray';
+    });
+
+    toggleClassButton.addEventListener('click', () => {
+      p.classList.toggle('highlight');
+    });
+  </script>
+
+</body>
+</html>
