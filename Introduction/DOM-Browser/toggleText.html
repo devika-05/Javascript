@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Exercise 2</title>
+  <style>
+    #hiddenText {
+      display: none;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="toggleText()">Toggle Message</button>
+  <p id="hiddenText">🎉 Surprise! You found me.</p>
+  <p id="hiddenText">🎉 Surprise! You found me.</p>
+  
+
+
+  <script>
+    function toggleText() {
+      const text = document.querySelectorAll('#hiddenText');
+      if (text.style.display === 'none') {
+        text.style.display = 'block';
+      } else {
+        text.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

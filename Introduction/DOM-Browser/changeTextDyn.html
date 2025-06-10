@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Exercise 3</title>
+</head>
+<body>
+
+  <p id="message">Hello! I'm the original text.</p>
+  <button onclick="changeText()">Change Text</button>
+
+  <script>
+    function changeText() {
+      const para = document.getElementById('message');
+      para.textContent = "🎉 The text has been changed!";
+    }
+  </script>
+
+</body>
+</html>

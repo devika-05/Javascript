@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Exercise 4</title>
+</head>
+<body>
+
+  <h3>My List:</h3>
+  <ul id="myList">
+    <li>Item 1</li>
+  </ul>
+  <button onclick="addItem()">Add Item</button>
+
+  <script>
+    let count = 2;
+    function addItem() {
+      const li = document.createElement('li'); // create new <li>
+      li.textContent = `Item ${count++}`;       // set its text
+      document.getElementById('myList').appendChild(li); // add to list
+    }
+  </script>
+
+</body>
+</html>

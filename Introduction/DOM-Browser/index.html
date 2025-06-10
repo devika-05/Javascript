@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Starter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 0.5rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM Manipulation Demo</h1>
+
+  <button id="addCardBtn">Add Card</button>
+  <button id="removeCardBtn">Remove Last Card</button>
+
+  <div id="container"></div>
+
+  <script>
+    const container = document.getElementById('container');
+    const addCardBtn = document.getElementById('addCardBtn');
+    const removeCardBtn = document.getElementById('removeCardBtn');
+
+    let count = 1;
+
+    addCardBtn.addEventListener('click', () => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.textContent = `This is card #${count++}`;
+      container.appendChild(card);
+    });
+
+    removeCardBtn.addEventListener('click', () => {
+      const cards = document.querySelectorAll('.card');
+      if (cards.length > 0) {
+        container.removeChild(cards[cards.length - 1]);
+        count--;
+      }
+    });
+  </script>
+
+</body>
+</html>
