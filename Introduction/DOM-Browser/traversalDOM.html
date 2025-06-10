@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Traversal Exercise</title>
+</head>
+<body>
+  <div id="container">
+    <h2>Title</h2>
+    <ul>
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+    </ul>
+  </div>
+
+  <script>
+    const ulParent= document.querySelector('ul');
+
+    console.log(ulParent.children);
+    console.log(ulParent.firstChild);
+    console.log(ulParent.lastChild);
+    
+    const secLi = ulParent.children[1];
+
+    console.log(secLi.previousElementSibling);
+    console.log(secLi);
+    console.log(secLi.nextElementSibling);
+    console.log(secLi.parentElement);          
+  </script>
+</body>
+</html>
